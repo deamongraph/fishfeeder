@@ -11,7 +11,11 @@ import android.widget.TextView;
 
 
 public class TimeConfig extends ActionBarActivity {
-
+    public void gotodate() {
+        Intent myIntent = new Intent(TimeConfig.this, Date.class);
+        //myIntent.putExtra("key", foodtimes); //Optional parameters
+        TimeConfig.this.startActivity(myIntent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +26,22 @@ public class TimeConfig extends ActionBarActivity {
         foodtimes.setText("You can select "+value+" values!");
 
         final Button cancel = (Button) findViewById(R.id.btm_closetime);
+        final Button next = (Button) findViewById(R.id.btm_next2);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotodate();
+            }
+        });
+
+
 
     }
 

@@ -271,7 +271,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Next"
-                android:id="@+id/button3"
+                android:id="@+id/btm_next2"
                 android:layout_column="30"
                 android:layout_marginLeft="50dp" />
         </TableRow>
