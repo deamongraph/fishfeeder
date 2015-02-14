@@ -25,6 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name=".TimeConfig"
+            android:label="@string/title_activity_time_config" >
+        </activity>
+        <activity
+            android:name=".Date"
+            android:label="@string/title_activity_date" >
+        </activity>
     </application>
 
 </manifest>

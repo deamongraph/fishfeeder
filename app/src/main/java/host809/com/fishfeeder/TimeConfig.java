@@ -9,43 +9,33 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.sql.Time;
 
+public class TimeConfig extends ActionBarActivity {
 
-public class Configuration extends ActionBarActivity {
-    public void gototime(String foodtimes) {
-        Intent myIntent = new Intent(Configuration.this, TimeConfig.class);
-        myIntent.putExtra("key", foodtimes); //Optional parameters
-        Configuration.this.startActivity(myIntent);
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_configuration);
-        //aqui va el codigo majestuoso
+        setContentView(R.layout.activity_time_config);
+        Intent intent = getIntent();
+        String value = intent.getStringExtra("key");
+        final TextView foodtimes = (android.widget.TextView) findViewById(R.id.txt_foodtimesdata);
+        foodtimes.setText("You can select "+value+" values!");
 
-        final Button cancel = (Button) findViewById(R.id.btm_cancel);
-        final Button next = (Button) findViewById(R.id.btm_next);
-        final TextView foodtimes = (TextView) findViewById(R.id.txt_foodtimes);
+        final Button cancel = (Button) findViewById(R.id.btm_closetime);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              gototime(foodtimes.getText().toString());
-            }
-        });
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_configuration, menu);
+        getMenuInflater().inflate(R.menu.menu_time_config, menu);
         return true;
     }
 
